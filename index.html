@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyejeX Ceylon Travels - Sri Lanka</title>
+    <meta name="description"
+        content="Your premium travel partner in Sri Lanka. Experience the beauty of the pearl of the Indian Ocean with VojeX Ceylon Travels.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">VoyejeX</span> <span class="logo-highlight">Ceylon Travels</span>
+            </a>
+
+            <nav class="desktop-nav" id="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="index.html#activities" class="nav-link">Activities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-container" style="position: relative;">
+                    <div class="lang-switcher" id="lang-btn">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English" id="current-lang-img">
+                        <span id="current-lang-text">EN</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                    <div class="lang-dropdown" id="lang-menu">
+                        <a href="#" data-lang="EN" data-flag="gb" class="lang-option"><img
+                                src="https://flagcdn.com/w20/gb.png" alt="English"> English</a>
+                        <a href="#" data-lang="JA" data-flag="jp" class="lang-option"><img
+                                src="https://flagcdn.com/w20/jp.png" alt="Japanese"> 日本語</a>
+                        <a href="#" data-lang="RU" data-flag="ru" class="lang-option"><img
+                                src="https://flagcdn.com/w20/ru.png" alt="Russian"> Русский</a>
+                        <a href="#" data-lang="ZH" data-flag="cn" class="lang-option"><img
+                                src="https://flagcdn.com/w20/cn.png" alt="Chinese"> 中文</a>
+                        <a href="#" data-lang="DE" data-flag="de" class="lang-option"><img
+                                src="https://flagcdn.com/w20/de.png" alt="German"> Deutsch</a>
+                    </div>
+                </div>
+                <a href="tel:+94777520883" class="btn btn-primary btn-pill header-btn">
+                    <i class="fas fa-phone-alt"></i> <span>Call Us</span>
+                </a>
+                <button class="hamburger" id="menu-btn" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <img src="images/bghome.png" alt="Sigiriya Rock Sri Lanka" class="hero-img" id="hero-img">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-content-inner">
+                    <p class="subtitle fade-up">Welcome to Paradise</p>
+                    <h1 class="huge-title fade-up delay-1">SRI LANKA</h1>
+                    <p class="hero-desc fade-up delay-2">
+                        Embark on an extraordinary journey through the pearl of the Indian Ocean with VojeX Ceylon
+                        Travels—a perfect escape for couples and individual travelers alike.<br>
+                        Discover a land of breathtaking diversity, where ancient cultural heritage meets pristine golden
+                        beaches and lush misty mountains.
+                    </p>
+                    <div class="hero-btns fade-up delay-3">
+                        <a href="https://wa.me/94703154013" target="_blank" class="btn btn-white btn-pill"
+                            style="color: black; font-weight: 600; text-transform: uppercase;">Book Trip <i
+                                class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+                        <a href="packages.html" class="btn btn-ghost btn-pill"
+                            style="border-color: rgba(255,255,255,0.5); backdrop-filter: blur(5px); text-transform: uppercase;">View
+                            Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-subtitle">Experience the best of Sri Lanka with our premium services</p>
+
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card fade-up">
+                        <img src="images/service_guide.png" alt="Expert Guides" class="service-bg">
+                        <div class="service-overlay"></div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-headset"></i></div>
+                            <h3>Expert Guides</h3>
+                            <p>Professional, knowledgeable, and friendly local guides to enhance your journey.</p>
+                            <span class="tag">Premium Service</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card fade-up delay-1">
+                        <img src="images/service_transport.png" alt="Luxury Transport" class="service-bg">
+                        <div class="service-overlay"></div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-car"></i></div>
+                            <h3>Luxury Transport</h3>
+                            <p>Comfortable, air-conditioned vehicles for all your travel needs across the island.</p>
+                            <span class="tag">Premium Service</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card fade-up delay-2">
+                        <img src="images/tours.jpg" alt="Custom Tours" class="service-bg">
+                        <div class="service-overlay"></div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+                            <h3>Custom Tours</h3>
+                            <p>Tailor-made itineraries designed to match your specific interests and schedule.</p>
+                            <span class="tag">Premium Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Activities Section -->
+        <section id="activities" class="section activities">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2 class="section-title">Our Activities</h2>
+                    <p class="section-subtitle">Immerse yourself in authentic Sri Lankan experiences</p>
+                </div>
+
+                <div class="activities-slider fade-up">
+                    <div class="activity-slider-track">
+                        <!-- Activity 1 -->
+                        <div class="activity-card">
+                            <img src="images/tuktuk.jpg" alt="Tuk Tuk Tour">
+                            <div class="activity-overlay"></div>
+                            <div class="activity-content">
+                                <span class="tag">Local Life</span>
+                                <h3>Village Tour with Tuk Tuk</h3>
+                                <p>Experience the authentic local lifestyle from the comfort of a traditional Tuk Tuk.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Activity 2 -->
+                        <div class="activity-card">
+                            <img src="images/hq720.jpg" alt="Traditional Cooking">
+                            <div class="activity-overlay"></div>
+                            <div class="activity-content">
+                                <span class="tag">Culture</span>
+                                <h3>Traditional Cooking Class</h3>
+                                <p>Learn the secrets of Sri Lankan spices and cook authentic rice and curry.</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity 3 -->
+                        <div class="activity-card">
+                            <img src="images/tea.jpg" alt="Tea Plantation Walk">
+                            <div class="activity-overlay"></div>
+                            <div class="activity-content">
+                                <span class="tag">Nature</span>
+                                <h3>Tea Plantation Walk</h3>
+                                <p>Stroll through the misty hills and learn about the famous Ceylon tea.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section why-us" id="about">
+            <div class="container why-us-container">
+                <div class="why-us-content fade-up">
+                    <p class="subtitle">YOUR TRAVEL PARTNER</p>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Why traverse with VojeX
+                        Ceylon Travels?</h2>
+                    <p class="mb-4">We believe that a truly extraordinary journey is built on a foundation of luxury,
+                        personal touch, and deep local knowledge. Our curated experiences ensure you see the hidden gems
+                        of Sri Lanka.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check-circle text-primary"></i> Hand-picked premium accommodations</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> 24/7 dedicated customer support</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Experienced and certified local guides</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Flexible itineraries for absolute freedom
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-pill mt-4">Plan Your Journey</a>
+                </div>
+
+                <div class="why-us-visuals fade-up delay-1">
+                    <div class="polaroid p-1">
+                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=400&auto=format&fit=crop"
+                            alt="Happy Tourists">
+                    </div>
+                    <div class="polaroid p-2">
+                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=400&auto=format&fit=crop"
+                            alt="Cultural Experience">
+                    </div>
+                    <div class="polaroid p-3">
+                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=400&auto=format&fit=crop"
+                            alt="Wildlife Safari">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="section reviews">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2 class="section-title">Guest Experiences</h2>
+                    <p class="section-subtitle">Read what our travelers have to say about their journey</p>
+                    <button class="btn btn-primary btn-pill mt-4" id="write-review-btn"><i class="fas fa-pen"></i> Write
+                        a Review</button>
+                </div>
+
+                <div class="reviews-slider fade-up">
+                    <div class="reviews-slider-track" id="reviews-track">
+                        <div class="review-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="review-stars">
+                                <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="review-text">"VojeX Ceylon Travels organized the most perfect honeymoon for us.
+                                From
+                                the luxury transport to the hidden local spots, everything was flawless!"</p>
+                            <div class="reviewer">
+                                <h4>Sarah & Mark</h4>
+                                <span>Verified Traveler, UK</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="review-stars">
+                                <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="review-text">"A magical experience in Sri Lanka thanks to our amazing guide. The
+                                Sigiriya tour and Ella train ride were highlights we will never forget."</p>
+                            <div class="reviewer">
+                                <h4>David L.</h4>
+                                <span>Verified Traveler, Australia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo mb-4" style="display: inline-block;">
+                        <span class="logo-text">VoyejeX</span> <span class="logo-highlight">Ceylon Travels</span>
+                    </a>
+                    <p class="footer-desc">Your premium travel partner in Sri Lanka. Crafting unforgettable memories and
+                        authentic experiences across the pearl of the Indian Ocean.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#reviews">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt text-primary"></i> Colombo, Sri Lanka</li>
+                        <li><i class="fas fa-phone-alt text-primary"></i> <a href="tel:+94777520883">+94 777 520 883</a>
+                        </li>
+                        <li><i class="fas fa-envelope text-primary"></i> <a
+                                href="mailto:info@vojexceylon.com">info@vojexceylon.com</a></li>
+                        <li><i class="fab fa-whatsapp text-primary"></i> <a href="https://wa.me/94777520883">Chat on
+                                WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VojeX Ceylon Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Side Buttons -->
+    <div class="sticky-side-btns fade-up delay-2">
+        <a href="https://wa.me/94777520883" target="_blank" class="side-btn btn-whatsapp" title="Book a Trip">
+            <i class="fab fa-whatsapp"></i> <span>Book a Trip</span>
+        </a>
+        <a href="packages.html" class="side-btn btn-packages" title="View Packages">
+            <i class="fas fa-boxes"></i> <span>View Packages</span>
+        </a>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="review-modal-overlay" id="review-modal">
+        <div class="review-form-container">
+            <button class="close-modal" id="close-review"><i class="fas fa-times"></i></button>
+            <h2 style="font-family: var(--font-heading); color: white; margin-bottom: 24px; font-size: 1.8rem;">Write a
+                Review</h2>
+
+            <form id="review-form">
+                <div class="star-rating-select" id="star-rating-select">
+                    <i class="fas fa-star" data-val="1"></i>
+                    <i class="fas fa-star" data-val="2"></i>
+                    <i class="fas fa-star" data-val="3"></i>
+                    <i class="fas fa-star" data-val="4"></i>
+                    <i class="fas fa-star" data-val="5"></i>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="review-name" class="form-control" placeholder="e.g. John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Country (Optional)</label>
+                    <input type="text" id="review-country" class="form-control" placeholder="e.g. UK">
+                </div>
+
+                <div class="form-group">
+                    <label>Your Review</label>
+                    <textarea id="review-text" class="form-control" placeholder="Tell us about your trip..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-pill" style="width: 100%;">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

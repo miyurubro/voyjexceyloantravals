@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VojeX Ceylon Travels - Sri Lanka</title>
+    <meta name="description"
+        content="Your premium travel partner in Sri Lanka. Experience the beauty of the pearl of the Indian Ocean with VojeX Ceylon Travels.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">VojeX</span> <span class="logo-highlight">Ceylon Travels</span>
+            </a>
+
+            <nav class="desktop-nav" id="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="packages.html" class="nav-link active">Packages</a>
+                <a href="index.html#activities" class="nav-link">Activities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-container" style="position: relative;">
+                    <div class="lang-switcher" id="lang-btn">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English" id="current-lang-img">
+                        <span id="current-lang-text">EN</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                    <div class="lang-dropdown" id="lang-menu">
+                        <a href="#" data-lang="EN" data-flag="gb" class="lang-option"><img
+                                src="https://flagcdn.com/w20/gb.png" alt="English"> English</a>
+                        <a href="#" data-lang="JA" data-flag="jp" class="lang-option"><img
+                                src="https://flagcdn.com/w20/jp.png" alt="Japanese"> 日本語</a>
+                        <a href="#" data-lang="RU" data-flag="ru" class="lang-option"><img
+                                src="https://flagcdn.com/w20/ru.png" alt="Russian"> Русский</a>
+                        <a href="#" data-lang="ZH" data-flag="cn" class="lang-option"><img
+                                src="https://flagcdn.com/w20/cn.png" alt="Chinese"> 中文</a>
+                        <a href="#" data-lang="DE" data-flag="de" class="lang-option"><img
+                                src="https://flagcdn.com/w20/de.png" alt="German"> Deutsch</a>
+                    </div>
+                </div>
+                <a href="tel:+94777520883" class="btn btn-primary btn-pill header-btn">
+                    <i class="fas fa-phone-alt"></i> <span>Call Us</span>
+                </a>
+                <button class="hamburger" id="menu-btn" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Packages Header -->
+        <section class="page-header"
+            style="padding-top: 150px; padding-bottom: 50px; background-color: var(--clr-bg); text-align: center;">
+            <div class="container fade-up">
+                <h1 class="title" style="font-size: 3rem;">All Tour Packages</h1>
+                <p class="subtitle" style="color: var(--clr-text-muted);">Explore our extensive range of curated
+                    experiences</p>
+            </div>
+        </section>
+
+        <!-- Popular Tours Section -->
+        <section id="packages" class="section popular-tours">
+            <div class="container">
+
+
+                <div class="package-filters fade-up delay-1">
+                    <button class="filter-btn active" data-filter="all">All Packages</button>
+                    <button class="filter-btn" data-filter="1">1 Day</button>
+                    <button class="filter-btn" data-filter="2">2 Days</button>
+                    <button class="filter-btn" data-filter="3">3 Days</button>
+                    <button class="filter-btn" data-filter="5">5 Days</button>
+                    <button class="filter-btn" data-filter="7">7 Days</button>
+                    <button class="filter-btn" data-filter="10">10 Days</button>
+                    <button class="filter-btn" data-filter="12">12 Days</button>
+                    <button class="filter-btn" data-filter="15">15 Days</button>
+                </div>
+
+                <div class="tours-grid">
+                    <!-- Tour 1 -->
+                    <div class="tour-card fade-up" data-duration="1">
+                        <div class="tour-img-wrap">
+                            <img src="images/tour_ella.png" alt="Ella Safari Day Tour">
+                            <span class="floating-tag">BEST SELLER</span>
+                        </div>
+                        <div class="tour-info">
+                            <div class="tour-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Ella, Sri Lanka</span>
+                                <span><i class="fas fa-clock"></i> 1 DAY TOUR</span>
+                            </div>
+                            <h3>Ella Safari Day Tour</h3>
+                            <div class="tour-rating">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <span>(120+ Reviews)</span>
+                            </div>
+                            <a href="#contact" class="btn-circle"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 2 -->
+                    <div class="tour-card fade-up delay-1" data-duration="2">
+                        <div class="tour-img-wrap">
+                            <img src="images/tour_kandy.png" alt="Kandy Cultural Experience">
+                            <span class="floating-tag">POPULAR</span>
+                        </div>
+                        <div class="tour-info">
+                            <div class="tour-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Kandy, Sri Lanka</span>
+                                <span><i class="fas fa-clock"></i> 2 DAYS TOUR</span>
+                            </div>
+                            <h3>Kandy Cultural Experience</h3>
+                            <div class="tour-rating">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star-half-alt text-primary"></i>
+                                <span>(85+ Reviews)</span>
+                            </div>
+                            <a href="#contact" class="btn-circle"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 3 -->
+                    <div class="tour-card fade-up delay-2" data-duration="1">
+                        <div class="tour-img-wrap">
+                            <img src="images/tour_sigiriya.png" alt="Sigiriya & Dambulla Heritage">
+                        </div>
+                        <div class="tour-info">
+                            <div class="tour-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Sigiriya, Sri Lanka</span>
+                                <span><i class="fas fa-clock"></i> 1 DAY TOUR</span>
+                            </div>
+                            <h3>Sigiriya & Dambulla Heritage</h3>
+                            <div class="tour-rating">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <span>(200+ Reviews)</span>
+                            </div>
+                            <a href="#contact" class="btn-circle"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 4 -->
+                    <div class="tour-card fade-up" data-duration="3">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1546708973-c3df9dbdf322?q=80&w=600&auto=format&fit=crop"
+                                alt="Hill Country Explorer">
+                        </div>
+                        <div class="tour-info">
+                            <div class="tour-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Nuwara Eliya</span>
+                                <span><i class="fas fa-clock"></i> 3 DAYS TOUR</span>
+                            </div>
+                            <h3>Hill Country Explorer</h3>
+                            <div class="tour-rating">
+                                <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star-half-alt text-primary"></i>
+                                <span>(90+ Reviews)</span>
+                            </div>
+                            <a href="#contact" class="btn-circle"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 5 -->
+                    <div class="tour-card fade-up delay-1" data-duration="7">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=400&auto=format&fit=crop"
+                                alt="Sri Lanka Heritage Trail">
+                            <span class="floating-tag">AMAZING VALUE</span>
+                        </div>
+                        <div class="tour-info">
+                            <div class="tour-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Cultural Triangle</span>
+                                <span><i class="fas fa-clock"></i> 7 DAYS TOUR</span>
+                            </div>
+                            <h3>Sri Lanka Heritage Trail</h3>
+                            <div class="tour-rating">
+                                <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i>
+                                <span>(150+ Reviews)</span>
+                            </div>
+                            <a href="#contact" class="btn-circle"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 6 -->
+                    <div class="tour-card fade-up delay-2" data-duration="15">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1582401656496-9d75f95f9018?q=80&w=600&auto=format&fit=crop"
+                                alt="Grand Ceylon Expedition">
+                            <span class="floating-tag">ULTIMATE</span>
+                        </div>
+                        <div class="tour-info">
+                            <div class="tour-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Island Wide</span>
+                                <span><i class="fas fa-clock"></i> 15 DAYS TOUR</span>
+                            </div>
+                            <h3>Grand Ceylon Expedition</h3>
+                            <div class="tour-rating">
+                                <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i><i
+                                    class="fas fa-star text-primary"></i>
+                                <span>(300+ Reviews)</span>
+                            </div>
+                            <a href="#contact" class="btn-circle"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo mb-4" style="display: inline-block;">
+                        <span class="logo-text">VojeX</span> <span class="logo-highlight">Ceylon Travels</span>
+                    </a>
+                    <p class="footer-desc">Your premium travel partner in Sri Lanka. Crafting unforgettable memories and
+                        authentic experiences across the pearl of the Indian Ocean.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#reviews">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt text-primary"></i> Colombo, Sri Lanka</li>
+                        <li><i class="fas fa-phone-alt text-primary"></i> <a href="tel:+94777520883">+94 777 520 883</a>
+                        </li>
+                        <li><i class="fas fa-envelope text-primary"></i> <a
+                                href="mailto:info@vojexceylon.com">info@vojexceylon.com</a></li>
+                        <li><i class="fab fa-whatsapp text-primary"></i> <a href="https://wa.me/94777520883">Chat on
+                                WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VojeX Ceylon Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tour Modal -->
+    <div class="tour-modal-overlay" id="tour-modal">
+        <div class="tour-modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <img src="" id="modal-img" alt="Tour Image">
+                <h2 id="modal-title">Tour Title</h2>
+                <div class="modal-meta" id="modal-meta"></div>
+                <p id="modal-desc">Description</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" target="_blank" class="btn-whatsapp-book" id="modal-book-btn">
+                    <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Side Buttons -->
+    <div class="sticky-side-btns fade-up delay-2">
+        <a href="https://wa.me/94777520883" target="_blank" class="side-btn btn-whatsapp" title="Book a Trip">
+            <i class="fab fa-whatsapp"></i> <span>Book a Trip</span>
+        </a>
+        <a href="packages.html" class="side-btn btn-packages" title="View Packages">
+            <i class="fas fa-boxes"></i> <span>View Packages</span>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
