@@ -253,9 +253,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const flag = option.getAttribute('data-flag');
                 
                 if (currentLangText && currentLangImg) {
-                    currentLangText.innerText = lang;
+                    currentLangText.innerText = lang.substring(0, 2).toUpperCase();
                     currentLangImg.src = `https://flagcdn.com/w20/${flag}.png`;
                 }
+                
+                // Trigger Google Translate
+                const gtCombo = document.querySelector('.goog-te-combo');
+                if (gtCombo) {
+                    gtCombo.value = lang;
+                    gtCombo.dispatchEvent(new Event('change'));
+                } else {
+                    // Fallback using cookie
+                    document.cookie = `googtrans=/en/${lang}; path=/`;
+                    window.location.reload();
+                }
+
                 langMenu.classList.remove('show');
             });
         });
