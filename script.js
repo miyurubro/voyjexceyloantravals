@@ -381,6 +381,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reviews Auto Slider
     const reviewsTrack = document.getElementById('reviews-track');
     if (reviewsTrack) {
+        // Load custom reviews from localStorage
+        const savedReviews = JSON.parse(localStorage.getItem('vojex_reviews') || '[]');
+        savedReviews.reverse().forEach(reviewHtml => {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = reviewHtml;
+            reviewsTrack.insertBefore(tempDiv.firstElementChild, reviewsTrack.children[0]);
+        });
+
         // Clone children to ensure enough content for infinite scroll if few reviews exist
         if (reviewsTrack.children.length < 4) {
             const originalChildren = Array.from(reviewsTrack.children);
@@ -505,6 +513,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Add right at the beginning
                 reviewsTrack.insertBefore(newCard, reviewsTrack.children[0]);
+
+                // Save to localStorage
+                const savedArr = JSON.parse(localStorage.getItem('vojex_reviews') || '[]');
+                savedArr.unshift(newCardHTML);
+                localStorage.setItem('vojex_reviews', JSON.stringify(savedArr));
 
                 // Reset and close
                 reviewForm.reset();
