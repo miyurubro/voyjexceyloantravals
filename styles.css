@@ -1619,3 +1619,130 @@ textarea.form-control {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+/* Hide Google Translate native UI completely */
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-banner-frame,
+#goog-gt-tt, 
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+.goog-tooltip {
+    display: none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Mobile Optimization (Responsive Fixes) */
+@media (max-width: 768px) {
+    /* Section sizing */
+    .section {
+        padding: 60px 0;
+    }
+    
+    /* Typography scaling */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .huge-title {
+        font-size: clamp(3rem, 10vw, 5rem);
+    }
+    
+    /* Header layout fixes */
+    .header-actions {
+        gap: 12px;
+    }
+    
+    .lang-switcher {
+        font-size: 0.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Hero */
+    .hero-content {
+        padding: 0 5%;
+        margin-top: 50px;
+    }
+    
+    /* Modals need more room */
+    .tour-modal-content, .review-form-container {
+        width: 95%;
+        padding: 20px;
+        margin: 10px;
+        max-height: 85vh;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .modal-body h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body img {
+        height: 220px;
+    }
+    
+    .tour-card, .activity-card {
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .huge-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-desc {
+        font-size: 0.95rem;
+    }
+    
+    .tours-grid, .services-grid, .about-grid {
+        gap: 20px;
+    }
+    
+    .tour-card, .service-card, .activity-card {
+        min-width: 100%;
+    }
+    
+    /* Footer elements */
+    .footer-desc {
+        max-width: 100%;
+    }
+    
+    /* Side buttons smaller on phones */
+    .side-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        padding-left: 14px;
+    }
+    
+    .side-btn:hover {
+        width: 180px;
+    }
+    
+    .side-btn span {
+        font-size: 0.85rem;
+        margin-left: 10px;
+    }
+}

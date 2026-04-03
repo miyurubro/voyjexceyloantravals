@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Sticky header on scroll
     const header = document.getElementById('main-header');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const menuBtn = document.getElementById('menu-btn');
     const mainNav = document.getElementById('main-nav');
-    
-    if(menuBtn && mainNav) {
+
+    if (menuBtn && mainNav) {
         menuBtn.addEventListener('click', () => {
             mainNav.classList.toggle('open');
             // Animate hamburger to X
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'auto';
             }
         });
-        
+
         // Close menu when link is clicked
         const navLinks = mainNav.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
+            if (targetId === '#') return;
+
             e.preventDefault();
             const target = document.querySelector(targetId);
-            
-            if(target) {
+
+            if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const tourCards = document.querySelectorAll('.tour-card');
 
-    if(filterBtns.length > 0) {
+    if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // Remove active class
@@ -105,9 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cardDuration = card.getAttribute('data-duration');
                     if (filterValue === 'all' || cardDuration === filterValue) {
                         card.style.display = 'block';
-                        setTimeout(() => { 
-                            card.style.opacity = '1'; 
-                            card.style.transform = 'translateY(0)'; 
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
                         }, 50);
                     } else {
                         card.style.opacity = '0';
@@ -123,32 +123,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const tourModal = document.getElementById('tour-modal');
     if (tourModal) {
         const closeModal = tourModal.querySelector('.close-modal');
-        
+
         tourCards.forEach(card => {
             card.addEventListener('click', (e) => {
                 // Ignore clicks on explicit links inside the card if there are any
-                if(e.target.closest('.btn-circle')) {
+                if (e.target.closest('.btn-circle')) {
                     e.preventDefault();
                 }
-                
+
                 // Extract data from the clicked card
                 const imgSrc = card.querySelector('img').src;
                 const title = card.querySelector('h3').innerText;
                 const metaHtml = card.querySelector('.tour-meta').innerHTML;
-                
+
                 // Provide a default description based on the title
                 const defaultDesc = `Join us for the amazing ${title}. This carefully curated package is designed to provide you with an unforgettable experience across Sri Lanka. Our expert guides and luxury transport ensure absolute comfort throughout your journey.`;
-                
+
                 // Set Modal Data
                 document.getElementById('modal-img').src = imgSrc;
                 document.getElementById('modal-title').innerText = title;
                 document.getElementById('modal-meta').innerHTML = metaHtml;
                 document.getElementById('modal-desc').innerText = defaultDesc;
-                
+
                 // Pre-fill WhatsApp message
                 const msg = encodeURIComponent(`Hi VojeX Ceylon Travels, I would like to book the '${title}'. Could you please send me more details?`);
                 document.getElementById('modal-book-btn').href = `https://wa.me/94777520883?text=${msg}`;
-                
+
                 // Show modal
                 tourModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // prevent background scroll
@@ -172,11 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Navigation Tab Highlighting setup
     const allNavLinks = document.querySelectorAll('.nav-link');
     const pageSections = document.querySelectorAll('section[id]');
-    
+
     function highlightActiveTab() {
         let scrollY = window.pageYOffset;
         let currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        
+
         // Handle non-index pages (packages.html, gallery.html, etc.)
         if (currentPath !== 'index.html' && currentPath !== '') {
             allNavLinks.forEach(link => {
@@ -194,18 +194,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionHeight = section.offsetHeight;
             const sectionTop = section.offsetTop - 150;  // offset for fixed header
             const sectionId = section.getAttribute('id');
-            
+
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 currentSectionId = sectionId;
             }
         });
-        
+
         let matchFound = false;
-        
+
         allNavLinks.forEach(link => {
             link.classList.remove('active');
             let href = link.getAttribute('href');
-            
+
             if (currentSectionId && currentSectionId !== 'home') {
                 if (href.includes('#' + currentSectionId)) {
                     link.classList.add('active');
@@ -234,6 +234,101 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentLangImg = document.getElementById('current-lang-img');
     const currentLangText = document.getElementById('current-lang-text');
 
+    // Add styles dynamically to guarantee Google Translate frame is hidden even if CSS caches
+    const hideGtStyle = document.createElement('style');
+    hideGtStyle.innerHTML = `
+        iframe.skiptranslate,
+        .goog-te-banner-frame,
+        .goog-te-balloon-frame,
+        .skiptranslate > iframe,
+        .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+        .VIpgJd-ZVi9od-ORHb-OEVmcd { 
+            display: none !important; 
+            visibility: hidden !important;
+            height: 0 !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            top: -9999px !important;
+        }
+        body { top: 0px !important; position: static !important; margin-top: 0px !important; }
+        html { top: 0px !important; margin-top: 0px !important; position: static !important; }
+        .goog-tooltip, .goog-tooltip:hover, #goog-gt-tt { display: none !important; }
+        .goog-text-highlight, font { background-color: transparent !important; box-shadow: none !important; }
+        
+        /* Hide widget container but keep it functional */
+        #google_translate_element {
+            position: absolute !important;
+            top: -9999px !important;
+            left: -9999px !important;
+            width: 0 !important;
+            height: 0 !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+    `;
+    document.head.appendChild(hideGtStyle);
+
+    // Aggressive MutationObserver to instantly hide the banner if it ever gets appended to the body
+    const gtObserver = new MutationObserver(() => {
+        const banners = document.querySelectorAll('.goog-te-banner-frame, .skiptranslate > iframe, iframe.skiptranslate');
+        banners.forEach(b => {
+            b.style.setProperty('display', 'none', 'important');
+            b.style.setProperty('visibility', 'hidden', 'important');
+            b.style.setProperty('opacity', '0', 'important');
+        });
+
+        if (document.body.style.top !== '0px' || document.body.style.top !== '') {
+            document.body.style.setProperty('top', '0px', 'important');
+        }
+    });
+    gtObserver.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
+
+
+    // Restore selected language from localStorage to persist UI across file:// loads
+    if (currentLangImg && currentLangText) {
+        const savedLang = localStorage.getItem('selected_language');
+
+        // Also check cookie just in case Google Translate altered it
+        let cookieLang = null;
+        const cookieMatch = document.cookie.match(/googtrans=\/en\/([a-z]{2}(-[A-Z]{2})?)/);
+        if (cookieMatch) cookieLang = cookieMatch[1];
+
+        const finalLang = savedLang || cookieLang;
+
+        if (finalLang) {
+            let matchingOption = null;
+            langOptions.forEach(opt => {
+                if (opt.getAttribute('data-lang') === finalLang) {
+                    matchingOption = opt;
+                }
+            });
+
+            if (matchingOption) {
+                const flag = matchingOption.getAttribute('data-flag');
+                currentLangText.innerText = finalLang.substring(0, 2).toUpperCase();
+                currentLangImg.src = `https://flagcdn.com/w20/${flag}.png`;
+
+                // Keep trying to trigger Google Translate natively until it loads
+                const triggerTranslate = () => {
+                    const gtCombo = document.querySelector('.goog-te-combo');
+                    if (gtCombo && gtCombo.value !== finalLang) {
+                        gtCombo.value = finalLang;
+                        if (typeof Event === 'function') {
+                            gtCombo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+                        } else {
+                            let evt = document.createEvent('HTMLEvents');
+                            evt.initEvent('change', true, true);
+                            gtCombo.dispatchEvent(evt);
+                        }
+                    } else if (!gtCombo) {
+                        setTimeout(triggerTranslate, 400);
+                    }
+                };
+                triggerTranslate();
+            }
+        }
+    }
+
     if (langBtn && langMenu) {
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -251,20 +346,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const lang = option.getAttribute('data-lang');
                 const flag = option.getAttribute('data-flag');
-                
+
                 if (currentLangText && currentLangImg) {
                     currentLangText.innerText = lang.substring(0, 2).toUpperCase();
                     currentLangImg.src = `https://flagcdn.com/w20/${flag}.png`;
                 }
-                
+
                 // Trigger Google Translate
                 const gtCombo = document.querySelector('.goog-te-combo');
+
+                // Save to localStorage for robust offline/local navigation
+                localStorage.setItem('selected_language', lang);
+                // Fallback cookie
+                document.cookie = `googtrans=/en/${lang}; path=/`;
+
                 if (gtCombo) {
                     gtCombo.value = lang;
-                    gtCombo.dispatchEvent(new Event('change'));
+                    if (typeof Event === 'function') {
+                        gtCombo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+                    } else {
+                        let evt = document.createEvent('HTMLEvents');
+                        evt.initEvent('change', true, true);
+                        gtCombo.dispatchEvent(evt);
+                    }
                 } else {
-                    // Fallback using cookie
-                    document.cookie = `googtrans=/en/${lang}; path=/`;
                     window.location.reload();
                 }
 
@@ -283,16 +388,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 reviewsTrack.appendChild(child.cloneNode(true));
             });
         }
-        
+
         let scrollPos = 0;
         let isHovered = false;
-        
+
         function scrollMarquee() {
             if (!isHovered) {
                 scrollPos += 1; // scroll speed
                 const firstCard = reviewsTrack.children[0];
                 const cardWidth = firstCard.offsetWidth + 30; // 30 is the gap
-                
+
                 if (scrollPos >= cardWidth) {
                     reviewsTrack.appendChild(firstCard);
                     scrollPos -= cardWidth;
@@ -304,11 +409,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             requestAnimationFrame(scrollMarquee);
         }
-        
+
         // Pause on hover
         reviewsTrack.addEventListener('mouseenter', () => isHovered = true);
         reviewsTrack.addEventListener('mouseleave', () => isHovered = false);
-        
+
         // Start marquee
         requestAnimationFrame(scrollMarquee);
     }
@@ -397,14 +502,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = newCardHTML;
                 const newCard = tempDiv.firstElementChild;
-                
+
                 // Add right at the beginning
                 reviewsTrack.insertBefore(newCard, reviewsTrack.children[0]);
 
                 // Reset and close
                 reviewForm.reset();
                 selectedRating = 5;
-                if(starSelect) {
+                if (starSelect) {
                     starSelect.querySelectorAll('i').forEach(s => {
                         s.classList.add('active', 'fas');
                         s.classList.remove('far');
