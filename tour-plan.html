@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Tour Itinerary & Live Route | VoyageX Ceylon Travels</title>
+    <meta name="description"
+        content="View your personalized Sri Lanka day-by-day itinerary, assigned private chauffeur guide details, live vehicle status, and interactive route map.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS for Itinerary Route Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/logo1.png">
+
+    <style>
+        .itinerary-hero {
+            padding: 130px 0 50px;
+            background: linear-gradient(180deg, rgba(5,5,5,0.85) 0%, rgba(10,10,14,0.98) 100%), url('images/bghome.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .itinerary-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .plan-header-card {
+            background: rgba(22, 23, 30, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            margin-top: -30px;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .plan-header-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Driver & Vehicle Card */
+        .driver-vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .driver-card, .vehicle-card {
+            background: rgba(20, 21, 28, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .driver-avatar-ring {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 2px solid var(--clr-primary);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .driver-avatar-ring img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Nearby Special Event Alert Banner */
+        .live-event-banner {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.18) 0%, rgba(255, 87, 34, 0.12) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            border-radius: var(--radius-card);
+            padding: 20px 28px;
+            margin: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.15);
+            animation: pulseGlow 2.5s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); }
+            to { box-shadow: 0 0 25px rgba(255, 87, 34, 0.35); }
+        }
+
+        /* Timeline Styles */
+        .timeline-section {
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 340px;
+            gap: 24px;
+            margin-bottom: 28px;
+            background: rgba(18, 19, 24, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 87, 34, 0.4);
+        }
+
+        @media (max-width: 990px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .day-badge-col {
+            text-align: center;
+        }
+
+        .day-number-bubble {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(255, 87, 34, 0.15);
+            border: 2px solid var(--clr-primary);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin: 0 auto;
+        }
+
+        .day-number-bubble span {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--clr-primary);
+            letter-spacing: 1px;
+        }
+
+        .day-img-box {
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .day-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Map */
+        #itineraryRouteMap {
+            width: 100%;
+            height: 440px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 20px 0 35px;
+        }
+
+        @media print {
+            header, .header-actions, .no-print {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                color: #000;
+            }
+            .itinerary-hero {
+                padding: 20px 0;
+                background: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center;">
+                <img src="images/custom.png" alt="VoyageX Ceylon Travels" style="height: 50px; width: auto;">
+            </a>
+
+            <nav class="desktop-nav" id="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="planner.html" class="nav-link">Plan Tour</a>
+            </nav>
+
+            <div class="header-actions no-print">
+                <button type="button" class="btn btn-ghost btn-pill header-btn" onclick="window.print()" style="border-color: rgba(255,255,255,0.2);">
+                    <i class="fas fa-print"></i> <span>Print / PDF</span>
+                </button>
+                <a href="tel:+94777520883" class="btn btn-primary btn-pill header-btn">
+                    <i class="fas fa-phone-alt"></i> <span>24/7 Support</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Itinerary Hero -->
+        <section class="itinerary-hero">
+            <div class="itinerary-container">
+                <span class="badge-step" style="background: rgba(255, 87, 34, 0.2); border-color: var(--clr-primary); color: #fff;">
+                    <i class="fas fa-check-circle" style="color: #22c55e;"></i> Verified VoyageX Expedition
+                </span>
+                <h1 style="font-size: 2.8rem; color: #fff; margin-bottom: 8px;" id="heroPlanTitle">
+                    Ceylon Grand Odyssey Itinerary
+                </h1>
+                <p style="color: var(--clr-text-muted); font-size: 1rem;" id="heroPlanSubtitle">
+                    Private Chauffeur-Driven Exploration of Sri Lanka
+                </p>
+            </div>
+        </section>
+
+        <!-- Itinerary Content -->
+        <section class="section" style="padding-top: 0;">
+            <div class="itinerary-container">
+                <!-- Plan Header Overview Card -->
+                <div class="plan-header-card">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                            <span class="ref-code-badge" id="planRefId" style="margin: 0; padding: 4px 14px; font-size: 1rem;">
+                                VX-PLAN-101
+                            </span>
+                            <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                                <i class="fas fa-dot-circle"></i> Confirmed & Live
+                            </span>
+                        </div>
+                        <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 8px;" id="planTitleDisplay">
+                            Ceylon Golden Heritage & Highland Odyssey
+                        </h2>
+                        <div style="font-size: 0.9rem; color: var(--clr-text-muted); display: flex; gap: 20px; flex-wrap: wrap;">
+                            <span><i class="fas fa-calendar-alt" style="color: var(--clr-primary);"></i> <strong id="planDurationDisplay">7 Days / 6 Nights</strong></span>
+                            <span><i class="fas fa-users" style="color: var(--clr-primary);"></i> <strong id="planPaxDisplay">4 Travelers</strong></span>
+                            <span><i class="fas fa-car" style="color: var(--clr-primary);"></i> <strong id="planVehicleTypeDisplay">Luxury AC Van</strong></span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;" class="no-print">
+                        <a id="btnShareWhatsApp" href="#" target="_blank" class="btn btn-primary btn-pill" style="background: #25D366; border-color: #25D366; font-weight: 600;">
+                            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Driver & Vehicle Card -->
+                <div class="driver-vehicle-grid">
+                    <!-- Assigned Driver -->
+                    <div class="driver-card">
+                        <div class="driver-avatar-ring">
+                            <img src="images/service_guide.png" alt="Chauffeur Guide" id="driverPhoto">
+                        </div>
+                        <div style="flex: 1;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--clr-primary); letter-spacing: 0.5px; font-weight: 600;">
+                                Your Chauffeur Guide
+                            </span>
+                            <h3 style="font-size: 1.25rem; color: #fff; margin: 2px 0 4px;" id="driverName">
+                                Sunil Perera
+                            </h3>
+                            <div style="font-size: 0.82rem; color: #aaa; margin-bottom: 8px;">
+                                <i class="fas fa-star" style="color: #f59e0b;"></i> <strong id="driverRating">4.9</strong> / 5.0 (SLTDA Certified)
+                            </div>
+                            <a id="driverWaLink" href="https://wa.me/94777520883" target="_blank" style="color: #25D366; font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                                <i class="fab fa-whatsapp"></i> Contact Driver Directly
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Assigned Vehicle & GPS Status -->
+                    <div class="vehicle-card">
+                        <div style="font-size: 2.4rem; color: var(--clr-primary); background: rgba(255,87,34,0.12); width: 68px; height: 68px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-shuttle-van"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--clr-primary); letter-spacing: 0.5px; font-weight: 600;">
+                                Assigned Vehicle & Live Radar
+                            </span>
+                            <h3 style="font-size: 1.25rem; color: #fff; margin: 2px 0 4px;" id="vehicleModel">
+                                Toyota KDH Super GL Luxury
+                            </h3>
+                            <div style="font-size: 0.82rem; color: #aaa; margin-bottom: 6px;">
+                                Plate: <strong style="color: #fff;" id="vehiclePlate">WP CAG-4512</strong> • AC & Wi-Fi Onboard
+                            </div>
+                            <div style="font-size: 0.8rem; color: #10b981; display: flex; align-items: center; gap: 6px;" id="vehicleLocationStatus">
+                                <span class="sync-dot"></span> <span id="vehLiveLoc">Live in Kandy Lake Round</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Special Sights Alert Banner (Proximity Event) -->
+                <div class="live-event-banner" id="eventAlertBanner">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="font-size: 2rem; color: #ef4444; background: rgba(239,68,68,0.2); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: #f59e0b; font-weight: 700; letter-spacing: 1px;">
+                                🚨 Live Special Highlight Nearby
+                            </span>
+                            <h4 style="font-size: 1.15rem; color: #fff; margin: 2px 0;" id="bannerEventTitle">
+                                Kandy Esala Perahera Cultural Procession Active Today!
+                            </h4>
+                            <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;" id="bannerEventDesc">
+                                Your vehicle is currently within proximity of this historic festival. Chauffeur guide can coordinate prime evening viewing!
+                            </p>
+                        </div>
+                    </div>
+                    <a id="bannerEventWaLink" href="https://wa.me/94777520883" target="_blank" class="btn btn-primary btn-pill no-print" style="flex-shrink: 0; font-size: 0.85rem; padding: 10px 18px;">
+                        <i class="fab fa-whatsapp"></i> Chat with Guide
+                    </a>
+                </div>
+
+                <!-- Interactive Route Map -->
+                <div>
+                    <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 6px;">
+                        <i class="fas fa-map-marked-alt" style="color: var(--clr-primary); margin-right: 8px;"></i>
+                        Interactive Expedition Route Across Sri Lanka
+                    </h3>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted);">
+                        Follow each stop along your travel corridor with live driver position marker.
+                    </p>
+                    <div id="itineraryRouteMap"></div>
+                </div>
+
+                <!-- Day-by-Day Timeline Breakdown -->
+                <div class="timeline-section">
+                    <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 24px;">
+                        <i class="fas fa-clock" style="color: var(--clr-primary); margin-right: 8px;"></i>
+                        Day-by-Day Journey Itinerary
+                    </h3>
+
+                    <div id="timelineContainer">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+
+                <!-- Included Services Summary -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-card); padding: 28px; margin: 30px 0;">
+                    <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 16px;">
+                        <i class="fas fa-concierge-bell" style="color: var(--clr-primary); margin-right: 8px;"></i>
+                        VoyageX Ceylon Tour Privileges & Inclusions
+                    </h4>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; font-size: 0.88rem; color: #cbd5e1;">
+                        <div><i class="fas fa-check" style="color: #22c55e; margin-right: 8px;"></i> Private Luxury Air-Conditioned Vehicle</div>
+                        <div><i class="fas fa-check" style="color: #22c55e; margin-right: 8px;"></i> Dedicated Government-Certified Chauffeur</div>
+                        <div><i class="fas fa-check" style="color: #22c55e; margin-right: 8px;"></i> Fuel, Express Highway Tolls & Parking Fees</div>
+                        <div><i class="fas fa-check" style="color: #22c55e; margin-right: 8px;"></i> Chauffeur Meals & Accommodation Covered</div>
+                        <div><i class="fas fa-check" style="color: #22c55e; margin-right: 8px;"></i> Complimentary Chilled Bottled Water Daily</div>
+                        <div><i class="fas fa-check" style="color: #22c55e; margin-right: 8px;"></i> 24/7 VoyageX Central Emergency Desk Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Master DB & Sync Script -->
+    <script src="voyagex-db.js"></script>
+
+    <script>
+        let routeMap = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTourPlan();
+            VoyageXDB.subscribe(() => {
+                renderTourPlan();
+            });
+        });
+
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function renderTourPlan() {
+            const planId = getQueryParam('planId') || 'plan_vx_101';
+            const plan = VoyageXDB.getTourPlanById(planId) || VoyageXDB.getTourPlans()[0];
+
+            if (!plan) {
+                alert('Tour plan not found!');
+                return;
+            }
+
+            // Headers
+            document.getElementById('heroPlanTitle').innerText = plan.title;
+            document.getElementById('planTitleDisplay').innerText = plan.title;
+            document.getElementById('planRefId').innerText = plan.id.toUpperCase();
+            document.getElementById('planDurationDisplay').innerText = `${plan.durationDays} Days / ${plan.durationDays - 1} Nights`;
+            document.getElementById('planPaxDisplay').innerText = `${plan.totalTravelers || 2} Travelers`;
+
+            // Driver & Vehicle
+            const driver = plan.assignedDriver || {};
+            document.getElementById('driverName').innerText = driver.name || 'Sunil Perera';
+            document.getElementById('driverRating').innerText = driver.rating || '4.9';
+            document.getElementById('vehicleModel').innerText = driver.vehicleModel || 'Toyota KDH Super GL';
+            document.getElementById('vehiclePlate').innerText = driver.plate || 'WP CAG-4512';
+            document.getElementById('planVehicleTypeDisplay').innerText = driver.vehicleModel || 'Luxury AC Fleet';
+
+            const cleanDriverPhone = (driver.phone || '+94777520883').replace(/[^0-9]/g, '');
+            document.getElementById('driverWaLink').href = `https://wa.me/${cleanDriverPhone}`;
+
+            // Vehicle Live GPS Status
+            const assignedVeh = VoyageXDB.getVehicleById(plan.assignedVehicleId) || VoyageXDB.getVehicles()[0];
+            if (assignedVeh) {
+                document.getElementById('vehLiveLoc').innerText = `${assignedVeh.currentLocationName} (${assignedVeh.status})`;
+            }
+
+            // WhatsApp Share Link
+            const shareUrl = window.location.href;
+            const shareMsg = `Check out our VoyageX Ceylon Sri Lanka Tour Plan: ${plan.title}\nLink: ${shareUrl}`;
+            document.getElementById('btnShareWhatsApp').href = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
+
+            // Check if any active alerts exist for this vehicle
+            const activeAlert = VoyageXDB.getAlerts().find(a => a.vehicleId === (assignedVeh ? assignedVeh.id : ''));
+            const banner = document.getElementById('eventAlertBanner');
+            if (activeAlert) {
+                banner.style.display = 'flex';
+                document.getElementById('bannerEventTitle').innerText = `${activeAlert.eventTitle} (${activeAlert.distanceKm} km away)`;
+                document.getElementById('bannerEventDesc').innerText = activeAlert.alertMessage;
+            } else {
+                banner.style.display = 'none';
+            }
+
+            // Render Timeline
+            renderTimeline(plan);
+
+            // Render Route Map
+            renderRouteMap(plan, assignedVeh);
+        }
+
+        function renderTimeline(plan) {
+            const container = document.getElementById('timelineContainer');
+            container.innerHTML = '';
+
+            const itinerary = plan.itinerary || [];
+            itinerary.forEach(item => {
+                const dest = VoyageXDB.getDestinationById(item.destination);
+                const imgSrc = dest ? dest.image : 'images/thebest.jpg';
+
+                const div = document.createElement('div');
+                div.className = 'timeline-item';
+                div.innerHTML = `
+                    <div class="day-badge-col">
+                        <div class="day-number-bubble">
+                            ${item.day}
+                            <span>Day</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--clr-primary); font-weight: 700; letter-spacing: 0.5px;">
+                            ${dest ? dest.region : 'Ceylon Discovery'} • Drive Time: ${item.driveTime || '2-3 hrs'}
+                        </span>
+                        <h4 style="font-size: 1.3rem; color: #fff; margin: 4px 0 8px;">
+                            ${item.title}
+                        </h4>
+                        <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 12px;">
+                            ${item.highlights}
+                        </p>
+                        <div style="font-size: 0.82rem; color: #94a3b8; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-bed" style="color: var(--clr-primary);"></i>
+                            <span>Recommended Stay: <strong style="color: #fff;">${item.stay}</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="day-img-box">
+                        <img src="${imgSrc}" alt="${item.title}" onerror="this.src='images/thebest.jpg'">
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderRouteMap(plan, assignedVeh) {
+            if (!routeMap) {
+                routeMap = L.map('itineraryRouteMap', {
+                    center: [7.8731, 80.7718],
+                    zoom: 7.6,
+                    scrollWheelZoom: true
+                });
+
+                const osmStreet = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; OpenStreetMap contributors'
+                });
+
+                const esriSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    maxZoom: 19,
+                    attribution: 'Tiles &copy; Esri World Imagery'
+                });
+
+                osmStreet.addTo(routeMap);
+
+                L.control.layers({
+                    '🗺️ Street Map': osmStreet,
+                    '🛰️ Satellite View': esriSatellite
+                }, null, { position: 'topright' }).addTo(routeMap);
+
+                setTimeout(() => {
+                    if (routeMap) routeMap.invalidateSize();
+                }, 300);
+            }
+
+            // Gather coordinates
+            const latlngs = [];
+            (plan.destinations || []).forEach((destId, idx) => {
+                const dest = VoyageXDB.getDestinationById(destId);
+                if (dest) {
+                    latlngs.push([dest.lat, dest.lng]);
+
+                    const dayIcon = L.divIcon({
+                        className: 'map-day-marker',
+                        html: `
+                            <div style="
+                                background: #FF5722;
+                                color: #fff;
+                                border: 2px solid #fff;
+                                border-radius: 50%;
+                                width: 30px;
+                                height: 30px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-weight: bold;
+                                font-size: 12px;
+                                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+                            ">${idx + 1}</div>
+                        `,
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15]
+                    });
+
+                    L.marker([dest.lat, dest.lng], { icon: dayIcon })
+                        .addTo(routeMap)
+                        .bindPopup(`<strong>Day ${idx + 1}: ${dest.name}</strong><br>${dest.sinhalaName}`);
+                }
+            });
+
+            // Draw line
+            if (latlngs.length > 1) {
+                L.polyline(latlngs, {
+                    color: '#FF5722',
+                    weight: 4,
+                    opacity: 0.85
+                }).addTo(routeMap);
+            }
+
+            // Add assigned vehicle live position pin
+            if (assignedVeh) {
+                const carIcon = L.divIcon({
+                    className: 'map-car-live',
+                    html: `
+                        <div style="
+                            background: #10b981;
+                            color: #fff;
+                            border: 2px solid #fff;
+                            border-radius: 20px;
+                            padding: 4px 10px;
+                            font-size: 11px;
+                            font-weight: bold;
+                            white-space: nowrap;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+                        ">
+                            <i class="fas fa-car-side"></i> Driver Live Position
+                        </div>
+                    `,
+                    iconSize: [120, 28],
+                    iconAnchor: [60, 14]
+                });
+
+                L.marker([assignedVeh.lat, assignedVeh.lng], { icon: carIcon })
+                    .addTo(routeMap)
+                    .bindPopup(`<strong>Driver: ${assignedVeh.driverName}</strong><br>Plate: ${assignedVeh.plateNumber}<br>Status: ${assignedVeh.status}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

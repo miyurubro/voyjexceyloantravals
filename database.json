@@ -1,0 +1,793 @@
+{
+  "destinations": [
+    {
+      "id": "sigiriya",
+      "name": "Sigiriya Rock Fortress",
+      "sinhalaName": "සීගිරිය",
+      "region": "Cultural Triangle",
+      "category": "heritage",
+      "lat": 7.957,
+      "lng": 80.7603,
+      "image": "images/tour_sigiriya.png",
+      "desc": "The UNESCO 5th-century palace in the sky with ancient frescoes, water gardens and breathtaking 360° summit views.",
+      "recommendedHours": 3.5,
+      "tag": "Top Rated UNESCO"
+    },
+    {
+      "id": "kandy",
+      "name": "Temple of the Sacred Tooth Relic (Kandy)",
+      "sinhalaName": "ශ්‍රී දළදා මාළිගාව",
+      "region": "Central Highlands",
+      "category": "heritage",
+      "lat": 7.2936,
+      "lng": 80.6413,
+      "image": "images/tour_kandy.png",
+      "desc": "The spiritual heart of Sri Lanka housing the sacred tooth relic of Lord Buddha inside a golden roofed royal palace.",
+      "recommendedHours": 2.5,
+      "tag": "Spiritual Wonder"
+    },
+    {
+      "id": "ella",
+      "name": "Nine Arch Bridge & Ella Rock",
+      "sinhalaName": "ඇල්ල ආරුක්කු නවයේ පාලම",
+      "region": "Hill Country",
+      "category": "nature",
+      "lat": 6.8768,
+      "lng": 81.0608,
+      "image": "images/tour_ella.png",
+      "desc": "Famous colonial viaduct surrounded by dense jungle and tea plantations, with iconic blue trains passing over.",
+      "recommendedHours": 3,
+      "tag": "Scenic & Photography"
+    },
+    {
+      "id": "nuwaraeliya",
+      "name": "Nuwara Eliya Tea Country & Gregory Lake",
+      "sinhalaName": "නුවරඑළිය තේ වතු",
+      "region": "Hill Country",
+      "category": "nature",
+      "lat": 6.9697,
+      "lng": 80.7891,
+      "image": "images/tea.jpg",
+      "desc": "Known as Little England with cool misty climate, sprawling emerald tea estates, colonial bungalows and waterfalls.",
+      "recommendedHours": 4,
+      "tag": "Misty Highlands"
+    },
+    {
+      "id": "yala",
+      "name": "Yala National Park Safari",
+      "sinhalaName": "යාල ජාතික වනෝද්‍යානය",
+      "region": "Southern Wildlife",
+      "category": "wildlife",
+      "lat": 6.3686,
+      "lng": 81.5204,
+      "image": "images/thebest.jpg",
+      "desc": "World famous sanctuary boasting the highest leopard density on earth, wild elephants, sloth bears, and crocodiles.",
+      "recommendedHours": 4.5,
+      "tag": "Leopard & Safari"
+    },
+    {
+      "id": "galle",
+      "name": "Galle Dutch Fort & Lighthouse",
+      "sinhalaName": "ගාල්ල ලන්දේසි කොටුව",
+      "region": "Southern Coast",
+      "category": "coastal",
+      "lat": 6.0268,
+      "lng": 80.217,
+      "image": "images/tours.jpg",
+      "desc": "Living 17th-century European fortress on the ocean rim with cobblestone lanes, chic cafes and historic bastion walls.",
+      "recommendedHours": 3,
+      "tag": "Ocean Ramparts"
+    },
+    {
+      "id": "mirissa",
+      "name": "Mirissa Whale Watching & Coconut Tree Hill",
+      "sinhalaName": "මිරිස්ස තල්මසුන් නැරඹීම",
+      "region": "Southern Coast",
+      "category": "coastal",
+      "lat": 5.9465,
+      "lng": 80.4578,
+      "image": "images/bghome.png",
+      "desc": "Tropical crescent bay famous for blue whale and dolphin excursions, surfing, and the palm tree sunset dome.",
+      "recommendedHours": 3.5,
+      "tag": "Whales & Sunset"
+    },
+    {
+      "id": "minneriya",
+      "name": "Minneriya Wild Elephant Gathering",
+      "sinhalaName": "මින්නේරිය අලි රංචුව",
+      "region": "North Central",
+      "category": "wildlife",
+      "lat": 8.0336,
+      "lng": 80.8994,
+      "image": "images/service_guide.png",
+      "desc": "The largest congregation of Asian elephants in the world around the ancient Minneriya tank reservoir.",
+      "recommendedHours": 3.5,
+      "tag": "World Wonder Wildlife"
+    },
+    {
+      "id": "anuradhapura",
+      "name": "Anuradhapura Sacred Ancient Kingdom",
+      "sinhalaName": "අනුරාධපුර පුජා නගරය",
+      "region": "Ancient Cities",
+      "category": "heritage",
+      "lat": 8.35,
+      "lng": 80.4037,
+      "image": "images/custom.png",
+      "desc": "2,500-year-old capital boasting towering white stupas (Ruwanwelisaya) and the sacred Jaya Sri Maha Bodhi tree.",
+      "recommendedHours": 4,
+      "tag": "Ancient Heritage"
+    },
+    {
+      "id": "colombo",
+      "name": "Colombo City & Lotus Tower",
+      "sinhalaName": "කොළඹ නෙළුම් කුළුණ",
+      "region": "Western Province",
+      "category": "urban",
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "image": "images/CityOfDreams.jpg",
+      "desc": "Sri Lanka’s vibrant commercial capital blending colonial architecture, bustling markets, and the 350m Lotus Tower.",
+      "recommendedHours": 3,
+      "tag": "Capital City"
+    },
+    {
+      "id": "dambulla",
+      "name": "Dambulla Golden Cave Temples",
+      "sinhalaName": "දඹුල්ල රන් විහාරය",
+      "region": "Cultural Triangle",
+      "category": "heritage",
+      "lat": 7.8567,
+      "lng": 80.6485,
+      "image": "images/service_transport.png",
+      "desc": "Magnificent ancient cave monastery featuring 153 Buddha statues and stunning ceiling mural frescoes.",
+      "recommendedHours": 2.5,
+      "tag": "Ancient Caves"
+    },
+    {
+      "id": "trincomalee",
+      "name": "Trincomalee & Pigeon Island Marine Park",
+      "sinhalaName": "ත්‍රිකුණාමලය පරවි දූපත",
+      "region": "Eastern Province",
+      "category": "coastal",
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "image": "images/bord.png",
+      "desc": "Pristine white sand beaches, turquoise waters for coral snorkeling, blacktip reef sharks, and Koneswaram temple.",
+      "recommendedHours": 4,
+      "tag": "Coral Snorkeling"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "veh_01",
+      "plateNumber": "WP CAG-4512",
+      "model": "Toyota KDH Super GL Luxury Van",
+      "type": "Van (9 Seater)",
+      "capacity": 9,
+      "driverName": "Sunil Perera",
+      "driverPhone": "+94777520883",
+      "driverPhoto": "images/service_guide.png",
+      "driverRating": 4.9,
+      "lat": 7.312393265163081,
+      "lng": 80.64231365081751,
+      "currentLocationName": "Updated via Map Pin",
+      "status": "En Route",
+      "speed": "55 km/h",
+      "heading": 140,
+      "currentPlanId": "plan_vx_101",
+      "assignedTourists": [
+        "Emily Watson (UK)",
+        "Marco Rossi (IT)"
+      ]
+    },
+    {
+      "id": "veh_02",
+      "plateNumber": "WP WP-8821",
+      "model": "Toyota Land Cruiser Prado 4x4",
+      "type": "Luxury SUV (5 Seater)",
+      "capacity": 5,
+      "driverName": "Nimal Fernando",
+      "driverPhone": "+94703154013",
+      "driverPhoto": "images/service_guide.png",
+      "driverRating": 5,
+      "lat": 7.970558407329359,
+      "lng": 80.75265551249471,
+      "currentLocationName": "Sigiriya Rock Access Road, Matale",
+      "status": "En Route",
+      "speed": "54 km/h",
+      "heading": 0,
+      "currentPlanId": "plan_vx_32166",
+      "assignedTourists": [
+        "Akira Tanaka (Japan)"
+      ]
+    },
+    {
+      "id": "veh_03",
+      "plateNumber": "WP CAB-1190",
+      "model": "Toyota Prius Luxury Hybrid",
+      "type": "Sedan (4 Seater)",
+      "capacity": 4,
+      "driverName": "Kasun Jayawardena",
+      "driverPhone": "+94712345678",
+      "driverPhoto": "images/service_guide.png",
+      "driverRating": 4.8,
+      "lat": 6.861089639189929,
+      "lng": 81.04266663080453,
+      "currentLocationName": "Ella Pass Valley, Badulla",
+      "status": "En Route",
+      "speed": "46 km/h",
+      "heading": 210,
+      "currentPlanId": "plan_vx_53853",
+      "assignedTourists": [
+        "Sarah Jenkins (Australia)"
+      ]
+    },
+    {
+      "id": "veh_04",
+      "plateNumber": "WP ND-6743",
+      "model": "Luxury Coaster Coach",
+      "type": "Mini Coach (22 Seater)",
+      "capacity": 22,
+      "driverName": "Dinesh Bandara",
+      "driverPhone": "+94778899001",
+      "driverPhoto": "images/service_guide.png",
+      "driverRating": 4.9,
+      "lat": 6.040188010697938,
+      "lng": 80.22773903622262,
+      "currentLocationName": "Galle Fort Ramparts, Southern Province",
+      "status": "En Route",
+      "speed": "51 km/h",
+      "heading": 0,
+      "currentPlanId": "plan_vx_83852",
+      "assignedTourists": [
+        "miyurrrru (Canada)"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_01",
+      "title": "Kandy Esala Perahera Cultural Procession",
+      "sinhalaTitle": "මහනුවර ඇසළ පෙරහැර මංගල්‍යය",
+      "location": "Kandy City & Temple of the Tooth",
+      "lat": 7.2936,
+      "lng": 80.6413,
+      "radiusKm": 15,
+      "category": "cultural",
+      "date": "Today & Tonight (Special Festival)",
+      "highlight": "Spectacular royal pageant with 50+ decorated tuskers, traditional Kandyan dancers, and fire jugglers. Best view near Dalada Maligawa after 6:30 PM.",
+      "active": true
+    },
+    {
+      "id": "evt_02",
+      "title": "Peak Asian Elephant Gathering (120+ Herd)",
+      "sinhalaTitle": "මින්නේරිය දැවැන්ත අලි රංචුව",
+      "location": "Minneriya National Park Tank",
+      "lat": 8.0336,
+      "lng": 80.8994,
+      "radiusKm": 22,
+      "category": "wildlife",
+      "date": "Active Daily from 3:30 PM to 6:00 PM",
+      "highlight": "Massive wild elephant herd spotted near reservoir banks with tender calves. Rare photo window right now! Chauffeur can arrange private 4x4 entry.",
+      "active": true
+    },
+    {
+      "id": "evt_03",
+      "title": "Blue Whale & Dolphin Migration Pod Sighted",
+      "sinhalaTitle": "මිරිස්ස මුහුදේ නිල් තල්මසුන්",
+      "location": "Mirissa Marine Trench Off-Coast",
+      "lat": 5.9465,
+      "lng": 80.4578,
+      "radiusKm": 18,
+      "category": "wildlife",
+      "date": "Morning Window 6:30 AM - 11:30 AM",
+      "highlight": "Unusually calm sea conditions with 3 blue whales breaching within 4 nautical miles. Catamaran expeditions running right now.",
+      "active": true
+    },
+    {
+      "id": "evt_04",
+      "title": "Scenic Ramboda Falls Peak Cascade & Tea Plucking Experience",
+      "sinhalaTitle": "රම්බොඩ දියඇල්ල සහ තේ අත්දැකීම",
+      "location": "Ramboda Pass, Nuwara Eliya Road",
+      "lat": 7.052,
+      "lng": 80.701,
+      "radiusKm": 15,
+      "category": "scenic",
+      "date": "Fresh Morning Visibility",
+      "highlight": "Crystal clear misty mountain panorama. High-elevation tea factory has live fresh green leaf tea plucking workshops for visitors today.",
+      "active": true
+    },
+    {
+      "id": "evt_05",
+      "title": "Galle Fort Sunset Artisan & Street Gastronomy Fair",
+      "sinhalaTitle": "ගාල්ල කොටුව සවස කලා හා ආහාර සැණකෙළිය",
+      "location": "Galle Dutch Fort Ramparts",
+      "lat": 6.0268,
+      "lng": 80.217,
+      "radiusKm": 14,
+      "category": "cultural",
+      "date": "Evenings from 4:30 PM",
+      "highlight": "Local gemstone crafters, live acoustic folk violinists, and fresh grilled lobster stalls set along the historic sea walls.",
+      "active": true
+    }
+  ],
+  "tourists": [
+    {
+      "id": "tourist_1791914667838",
+      "referenceCode": "VX-7452",
+      "name": "miyurrrru",
+      "country": "Canada",
+      "phone": "0768895962",
+      "email": "",
+      "groupSize": 2,
+      "travelDates": "Flexible",
+      "durationDays": 7,
+      "vibe": "Wildlife Safari & Nature",
+      "priorities": [
+        "yala",
+        "galle",
+        "minneriya"
+      ],
+      "notes": "",
+      "createdAt": "2026-10-13T18:04:27.838Z",
+      "assignedPlanId": "plan_vx_83852",
+      "status": "assigned"
+    },
+    {
+      "id": "tourist_101",
+      "referenceCode": "VX-7821",
+      "name": "Emily Watson",
+      "country": "United Kingdom",
+      "phone": "+447911123456",
+      "email": "emily.watson@example.co.uk",
+      "groupSize": 2,
+      "travelDates": "2026-10-18 to 2026-10-25",
+      "durationDays": 7,
+      "vibe": "Cultural & Nature Discovery",
+      "priorities": [
+        "sigiriya",
+        "kandy",
+        "ella",
+        "yala",
+        "galle"
+      ],
+      "notes": "Love history, scenic photography, and comfortable private transport.",
+      "createdAt": "2026-10-13T10:15:00Z",
+      "assignedPlanId": "plan_vx_101",
+      "status": "assigned"
+    },
+    {
+      "id": "tourist_102",
+      "referenceCode": "VX-7822",
+      "name": "Marco Rossi",
+      "country": "Italy",
+      "phone": "+393401234567",
+      "email": "marco.rossi@example.it",
+      "groupSize": 2,
+      "travelDates": "2026-10-19 to 2026-10-26",
+      "durationDays": 7,
+      "vibe": "Scenic Highlands & Coast",
+      "priorities": [
+        "kandy",
+        "sigiriya",
+        "nuwaraeliya",
+        "ella",
+        "mirissa"
+      ],
+      "notes": "Interested in Ceylon tea trails and whale watching.",
+      "createdAt": "2026-10-13T11:20:00Z",
+      "assignedPlanId": "plan_vx_101",
+      "status": "assigned"
+    },
+    {
+      "id": "tourist_103",
+      "referenceCode": "VX-7823",
+      "name": "Akira Tanaka",
+      "country": "Japan",
+      "phone": "+819012345678",
+      "email": "akira.tanaka@example.jp",
+      "groupSize": 1,
+      "travelDates": "2026-10-20 to 2026-10-27",
+      "durationDays": 7,
+      "vibe": "Ancient Heritage & Tranquility",
+      "priorities": [
+        "sigiriya",
+        "anuradhapura",
+        "kandy",
+        "nuwaraeliya",
+        "colombo"
+      ],
+      "notes": "Keen on Buddhist heritage, temple architecture, and peaceful nature.",
+      "createdAt": "2026-10-13T12:05:00Z",
+      "assignedPlanId": "plan_vx_32166",
+      "status": "assigned"
+    },
+    {
+      "id": "tourist_104",
+      "referenceCode": "VX-7824",
+      "name": "Sarah Jenkins",
+      "country": "Australia",
+      "phone": "+61412345678",
+      "email": "sarah.j@example.au",
+      "groupSize": 2,
+      "travelDates": "2026-10-21 to 2026-10-28",
+      "durationDays": 7,
+      "vibe": "Wildlife & Adventure",
+      "priorities": [
+        "ella",
+        "yala",
+        "mirissa",
+        "galle",
+        "sigiriya"
+      ],
+      "notes": "Huge wildlife fan! Want to spot leopards, elephants and surf southern coast.",
+      "createdAt": "2026-10-13T13:40:00Z",
+      "assignedPlanId": "plan_vx_53853",
+      "status": "assigned"
+    },
+    {
+      "id": "tourist_105",
+      "referenceCode": "VX-7825",
+      "name": "Liam O'Connor",
+      "country": "Ireland",
+      "phone": "+353871234567",
+      "email": "liam.oc@example.ie",
+      "groupSize": 3,
+      "travelDates": "2026-10-22 to 2026-10-29",
+      "durationDays": 7,
+      "vibe": "Signature Ceylon Grand Tour",
+      "priorities": [
+        "sigiriya",
+        "kandy",
+        "ella",
+        "yala",
+        "mirissa"
+      ],
+      "notes": "Family trip. Need spacious air-conditioned vehicle with courteous guide.",
+      "createdAt": "2026-10-13T14:10:00Z",
+      "assignedPlanId": null,
+      "status": "pending"
+    }
+  ],
+  "tourPlans": [
+    {
+      "id": "plan_vx_83852",
+      "title": "VoyageX Ceylon Tour: miyurrrru Group",
+      "slug": "voyagex-ceylon-tour-miyurrrru-group-plan_vx_83852",
+      "generatedDate": "2026-10-13T18:04:43.853Z",
+      "durationDays": 5,
+      "totalTravelers": 2,
+      "assignedTourists": [
+        "tourist_1791914667838"
+      ],
+      "assignedVehicleId": "veh_04",
+      "assignedDriver": {
+        "name": "Dinesh Bandara",
+        "phone": "+94778899001",
+        "rating": 4.9,
+        "vehicleModel": "Luxury Coaster Coach",
+        "plate": "WP ND-6743"
+      },
+      "status": "Auto-Generated & Ready",
+      "destinations": [
+        "minneriya",
+        "yala",
+        "galle"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Minneriya Wild Elephant Gathering Discovery",
+          "destination": "minneriya",
+          "destinationName": "Minneriya Wild Elephant Gathering",
+          "highlights": "Exclusive exploration of Minneriya Wild Elephant Gathering with private chauffeur guide and cultural tasting.",
+          "stay": "Luxury Partner Heritage Resort",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 2,
+          "title": "Wild Safari Expedition & Leopard Tracking",
+          "destination": "yala",
+          "destinationName": "Yala National Park Safari",
+          "highlights": "Open-top 4x4 safari through Yala National Park Block 1 with expert tracker. Leopard, elephant, and sloth bear sighting.",
+          "stay": "Cinnamon Wild Yala / Jetwing Yala",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 3,
+          "title": "Galle UNESCO Dutch Fort & Colonial Ramparts",
+          "destination": "galle",
+          "destinationName": "Galle Dutch Fort & Lighthouse",
+          "highlights": "Walk along historic 17th-century ramparts and lighthouse, artisan jewellery shops, and beachside dining.",
+          "stay": "Fort Bazaar / Amangalla Galle",
+          "driveTime": "2.0 - 3.5 hrs"
+        }
+      ],
+      "notes": "Auto-generated for 1 tourists based on top ranked preferences (minneriya, yala, galle)."
+    },
+    {
+      "id": "plan_vx_53853",
+      "title": "VoyageX Ceylon Tour: Sarah Group",
+      "slug": "voyagex-ceylon-tour-sarah-group-plan_vx_53853",
+      "generatedDate": "2026-10-13T17:22:33.853Z",
+      "durationDays": 5,
+      "totalTravelers": 2,
+      "assignedTourists": [
+        "tourist_104"
+      ],
+      "assignedVehicleId": "veh_03",
+      "assignedDriver": {
+        "name": "Kasun Jayawardena",
+        "phone": "+94712345678",
+        "rating": 4.8,
+        "vehicleModel": "Toyota Prius Luxury Hybrid",
+        "plate": "WP CAB-1190"
+      },
+      "status": "Auto-Generated & Ready",
+      "destinations": [
+        "sigiriya",
+        "ella",
+        "yala",
+        "mirissa",
+        "galle"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Lion Rock Citadel & Ancient Cave Frescoes",
+          "destination": "sigiriya",
+          "destinationName": "Sigiriya Rock Fortress",
+          "highlights": "Private sunrise climb of Sigiriya rock fortress, royal water gardens, and Dambulla cave murals.",
+          "stay": "Habarana Village by Cinnamon / Sigiriya Water Garden",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 2,
+          "title": "Nine Arch Viaduct & Ella Gap Panorama",
+          "destination": "ella",
+          "destinationName": "Nine Arch Bridge & Ella Rock",
+          "highlights": "Walk across the Nine Arch colonial bridge for train crossings, Little Adam's Peak sunset hike, and Ravana falls.",
+          "stay": "98 Acres Resort & Spa / EKHO Ella",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 3,
+          "title": "Wild Safari Expedition & Leopard Tracking",
+          "destination": "yala",
+          "destinationName": "Yala National Park Safari",
+          "highlights": "Open-top 4x4 safari through Yala National Park Block 1 with expert tracker. Leopard, elephant, and sloth bear sighting.",
+          "stay": "Cinnamon Wild Yala / Jetwing Yala",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 4,
+          "title": "Ocean Whale Cruise & Coconut Tree Hill Sunset",
+          "destination": "mirissa",
+          "destinationName": "Mirissa Whale Watching & Coconut Tree Hill",
+          "highlights": "Early morning blue whale observation cruise, surf lessons, and golden sunset atop Coconut Tree Hill.",
+          "stay": "Triple O Six Mirissa / Sri Sharavi Beach Villas",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 5,
+          "title": "Galle UNESCO Dutch Fort & Colonial Ramparts",
+          "destination": "galle",
+          "destinationName": "Galle Dutch Fort & Lighthouse",
+          "highlights": "Walk along historic 17th-century ramparts and lighthouse, artisan jewellery shops, and beachside dining.",
+          "stay": "Fort Bazaar / Amangalla Galle",
+          "driveTime": "2.0 - 3.5 hrs"
+        }
+      ],
+      "notes": "Auto-generated for 1 tourists based on top ranked preferences (sigiriya, ella, yala, mirissa, galle)."
+    },
+    {
+      "id": "plan_vx_32166",
+      "title": "VoyageX Ceylon Tour: Akira Group",
+      "slug": "voyagex-ceylon-tour-akira-group-plan_vx_32166",
+      "generatedDate": "2026-10-13T17:22:12.166Z",
+      "durationDays": 5,
+      "totalTravelers": 1,
+      "assignedTourists": [
+        "tourist_103"
+      ],
+      "assignedVehicleId": "veh_02",
+      "assignedDriver": {
+        "name": "Nimal Fernando",
+        "phone": "+94703154013",
+        "rating": 5,
+        "vehicleModel": "Toyota Land Cruiser Prado 4x4",
+        "plate": "WP WP-8821"
+      },
+      "status": "Auto-Generated & Ready",
+      "destinations": [
+        "anuradhapura",
+        "sigiriya",
+        "kandy",
+        "nuwaraeliya",
+        "colombo"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Anuradhapura Sacred Ancient Kingdom Discovery",
+          "destination": "anuradhapura",
+          "destinationName": "Anuradhapura Sacred Ancient Kingdom",
+          "highlights": "Exclusive exploration of Anuradhapura Sacred Ancient Kingdom with private chauffeur guide and cultural tasting.",
+          "stay": "Luxury Partner Heritage Resort",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 2,
+          "title": "Lion Rock Citadel & Ancient Cave Frescoes",
+          "destination": "sigiriya",
+          "destinationName": "Sigiriya Rock Fortress",
+          "highlights": "Private sunrise climb of Sigiriya rock fortress, royal water gardens, and Dambulla cave murals.",
+          "stay": "Habarana Village by Cinnamon / Sigiriya Water Garden",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 3,
+          "title": "Kandy Sacred Kingdom & Royal Botanical Sanctuary",
+          "destination": "kandy",
+          "destinationName": "Temple of the Sacred Tooth Relic (Kandy)",
+          "highlights": "Evening visit to the Temple of the Sacred Tooth Relic, Kandyan drumming performance, and Peradeniya gardens.",
+          "stay": "The Grand Kandyan / Earl's Regency Hotel",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 4,
+          "title": "Highland Tea Estate & Misty Waterfalls",
+          "destination": "nuwaraeliya",
+          "destinationName": "Nuwara Eliya Tea Country & Gregory Lake",
+          "highlights": "Scenic drive past Ramboda Falls. Hand-pluck tea leaves at an artisanal tea estate, English high tea, and Lake Gregory.",
+          "stay": "Grand Hotel Nuwara Eliya / Heritance Tea Factory",
+          "driveTime": "2.0 - 3.5 hrs"
+        },
+        {
+          "day": 5,
+          "title": "Colombo City & Lotus Tower Discovery",
+          "destination": "colombo",
+          "destinationName": "Colombo City & Lotus Tower",
+          "highlights": "Exclusive exploration of Colombo City & Lotus Tower with private chauffeur guide and cultural tasting.",
+          "stay": "Luxury Partner Heritage Resort",
+          "driveTime": "2.0 - 3.5 hrs"
+        }
+      ],
+      "notes": "Auto-generated for 1 tourists based on top ranked preferences (anuradhapura, sigiriya, kandy, nuwaraeliya, colombo)."
+    },
+    {
+      "id": "plan_vx_101",
+      "title": "Ceylon Golden Heritage & Highland Odyssey",
+      "slug": "ceylon-golden-heritage-highland-odyssey-plan_vx_101",
+      "generatedDate": "2026-10-13T15:00:00Z",
+      "durationDays": 7,
+      "totalTravelers": 4,
+      "assignedTourists": [
+        "tourist_101",
+        "tourist_102"
+      ],
+      "assignedVehicleId": "veh_01",
+      "assignedDriver": {
+        "name": "Sunil Perera",
+        "phone": "+94777520883",
+        "rating": 4.9,
+        "vehicleModel": "Toyota KDH Super GL Luxury Van",
+        "plate": "WP CAG-4512"
+      },
+      "status": "Active & Confirmed",
+      "destinations": [
+        "sigiriya",
+        "kandy",
+        "nuwaraeliya",
+        "ella",
+        "yala",
+        "galle"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Airport Arrival & Sigiriya Ancient Citadel",
+          "destination": "sigiriya",
+          "highlights": "VIP welcome at Colombo BIA airport, private transfer to Sigiriya, climb the iconic 5th-century Lion Rock fortress at golden hour.",
+          "stay": "Sigiriya Heritage Eco Resort",
+          "driveTime": "3.5 hrs"
+        },
+        {
+          "day": 2,
+          "title": "Dambulla Golden Caves & Kandy Royal Capital",
+          "destination": "kandy",
+          "highlights": "Explore Dambulla cave murals, scenic drive through spice hills to Kandy. Evening puja ceremony at Temple of the Sacred Tooth Relic.",
+          "stay": "The Grand Kandyan Hotel",
+          "driveTime": "2.5 hrs"
+        },
+        {
+          "day": 3,
+          "title": "Misty Tea Gardens & Little England",
+          "destination": "nuwaraeliya",
+          "highlights": "Scenic hill climb past Ramboda Falls. Tour Mackwoods high-grown tea factory with tea tasting and leisurely stroll along Lake Gregory.",
+          "stay": "Grand Hotel Nuwara Eliya",
+          "driveTime": "2.5 hrs"
+        },
+        {
+          "day": 4,
+          "title": "Iconic Blue Train & Nine Arch Bridge",
+          "destination": "ella",
+          "highlights": "Breathtaking mountain railway journey to Ella. Walk across the architectural Nine Arch Viaduct surrounded by lush forest.",
+          "stay": "98 Acres Resort & Spa Ella",
+          "driveTime": "2.0 hrs"
+        },
+        {
+          "day": 5,
+          "title": "Ravana Falls & Yala Leopard Safari",
+          "destination": "yala",
+          "highlights": "Descend through Ravana waterfalls gorge to the dry zone. Private 4x4 open-top jeep safari in Block 1 for leopards and elephants.",
+          "stay": "Cinnamon Wild Yala",
+          "driveTime": "2.5 hrs"
+        },
+        {
+          "day": 6,
+          "title": "Southern Golden Coastline & Galle Dutch Fort",
+          "destination": "galle",
+          "highlights": "Drive along the turquoise southern ocean rim. Walk atop the 17th-century Galle Fort ramparts, sunset lighthouse view and dining.",
+          "stay": "Fort Bazaar Boutique Hotel",
+          "driveTime": "2.0 hrs"
+        },
+        {
+          "day": 7,
+          "title": "Colombo City Highlights & Airport Departure",
+          "destination": "colombo",
+          "highlights": "Morning coastal highway cruise, brief panoramic tour of Colombo Lotus Tower and Independence Square, transfer to airport for departure.",
+          "stay": "Departure",
+          "driveTime": "2.0 hrs"
+        }
+      ],
+      "notes": "Generated automatically by VoyageX Ceylon AI from aggregated tourist priority votes with optimal geographical routing."
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alt_1791913223767_57",
+      "vehicleId": "veh_04",
+      "vehiclePlate": "WP ND-6743",
+      "driverName": "Dinesh Bandara",
+      "driverPhone": "+94778899001",
+      "eventId": "evt_05",
+      "eventTitle": "Galle Fort Sunset Artisan & Street Gastronomy Fair",
+      "eventCategory": "cultural",
+      "highlight": "Local gemstone crafters, live acoustic folk violinists, and fresh grilled lobster stalls set along the historic sea walls.",
+      "distanceKm": 1,
+      "timestamp": "2026-10-13T17:40:23.767Z",
+      "status": "active",
+      "alertMessage": "🚨 SPECIAL SIGHT NEARBY (1.0 km)! Vehicle WP ND-6743 is near \"Galle Fort Sunset Artisan & Street Gastronomy Fair\". Tip: Local gemstone crafters, live acoustic folk violinists, and fresh grilled lobster stalls set along the historic sea walls."
+    },
+    {
+      "id": "alt_1791913223767_62",
+      "vehicleId": "veh_02",
+      "vehiclePlate": "WP WP-8821",
+      "driverName": "Nimal Fernando",
+      "driverPhone": "+94703154013",
+      "eventId": "evt_02",
+      "eventTitle": "Peak Asian Elephant Gathering (120+ Herd)",
+      "eventCategory": "wildlife",
+      "highlight": "Massive wild elephant herd spotted near reservoir banks with tender calves. Rare photo window right now! Chauffeur can arrange private 4x4 entry.",
+      "distanceKm": 17.8,
+      "timestamp": "2026-10-13T17:40:23.767Z",
+      "status": "active",
+      "alertMessage": "🚨 SPECIAL SIGHT NEARBY (17.8 km)! Vehicle WP WP-8821 is near \"Peak Asian Elephant Gathering (120+ Herd)\". Tip: Massive wild elephant herd spotted near reservoir banks with tender calves. Rare photo window right now! Chauffeur can arrange private 4x4 entry."
+    },
+    {
+      "id": "alt_01",
+      "vehicleId": "veh_01",
+      "vehiclePlate": "WP CAG-4512",
+      "driverName": "Sunil Perera",
+      "driverPhone": "+94777520883",
+      "eventId": "evt_01",
+      "eventTitle": "Kandy Esala Perahera Cultural Procession",
+      "distanceKm": 0.8,
+      "timestamp": "2026-10-13T16:00:00Z",
+      "status": "sent",
+      "alertMessage": "SPECIAL SIGHT NEARBY! Vehicle WP CAG-4512 is currently 0.8 km from Kandy Esala Perahera. Don't miss the festive procession near Temple of the Tooth!"
+    }
+  ],
+  "lastSync": "2026-10-13T18:04:43.853Z"
+}
